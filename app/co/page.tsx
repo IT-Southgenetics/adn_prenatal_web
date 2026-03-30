@@ -7,6 +7,7 @@ import EmpathyCo from '@/components/co/EmpathyCo'
 import HowItWorksCo from '@/components/co/HowItWorksCo'
 import Benefits from '@/components/Benefits'
 import FAQCo from '@/components/co/FAQCo'
+import InstagramBanner from '@/components/InstagramBanner'
 import ContactCTACo from '@/components/co/ContactCTACo'
 import FooterCo from '@/components/co/FooterCo'
 import { countries } from '@/config/countries.config'
@@ -24,6 +25,7 @@ export default function ColombiaPage() {
       <GlobalTrust />
       <Benefits country={country} />
       <FAQCo />
+      <InstagramBanner />
       <ContactCTACo />
       <FooterCo />
     </main>

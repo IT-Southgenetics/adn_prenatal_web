@@ -7,6 +7,7 @@ import Empathy from '@/components/Empathy'
 import HowItWorks from '@/components/HowItWorks'
 import Benefits from '@/components/Benefits'
 import FAQ from '@/components/FAQ'
+import InstagramBanner from '@/components/InstagramBanner'
 import ContactCTA from '@/components/ContactCTA'
 import Footer from '@/components/Footer'
 import { countries } from '@/config/countries.config'
@@ -25,6 +26,7 @@ export default function VenezuelaPage() {
       <GlobalTrust />
       <Benefits country={country} />
       <FAQ country={country} />
+      <InstagramBanner />
       <ContactCTA country={country} />
       <Footer country={country} />
     </main>
