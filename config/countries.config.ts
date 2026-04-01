@@ -110,6 +110,43 @@ export const countries: Record<string, CountryConfig> = {
     metaTitle: 'Prueba de Paternidad Prenatal en Argentina - Test ADN Prenatal Buenos Aires',
     metaDescription: 'Test de Paternidad Prenatal en Argentina: pruebas de ADN prenatal seguras y confidenciales. Resultados en 10 días hábiles. Atención en Buenos Aires y Belgrano.'
   },
+  cl: {
+    code: 'cl',
+    name: 'Chile',
+    fullName: 'Chile',
+    currency: 'USD',
+    currencySymbol: 'US$',
+    phone: '+56 9 1234 5678',
+    whatsappNumber: '56912345678',
+    email: 'chile@pacificgenomics.com',
+    cities: ['Santiago', 'Valparaíso', 'Concepción', 'La Serena', 'Antofagasta'],
+    mainCity: 'Santiago',
+    hreflang: 'es-CL',
+    locale: 'es_CL',
+    timezone: 'America/Santiago',
+    price: 1250,
+    priceDisplay: 'US$ 1,250',
+    urlPrefix: '/cl',
+    flag: '🇨🇱',
+    paymentMethods: ['Transferencia bancaria', 'Webpay', 'Tarjetas débito/crédito', 'Khipu', 'Mach'],
+    businessHours: 'Lunes a viernes 9:00 - 18:00',
+    deliveryDays: '10 días hábiles',
+    terms: {
+      money: 'plata',
+      mom: 'mamá',
+      baby: 'bebé',
+      test: 'test'
+    },
+    seoKeywords: [
+      'prueba paternidad prenatal chile',
+      'test paternidad prenatal santiago',
+      'prueba adn prenatal chile',
+      'test paternidad embarazo chile',
+      'prueba paternidad prenatal precio chile'
+    ],
+    metaTitle: 'Prueba de Paternidad Prenatal en Chile - Test ADN Prenatal Santiago | PacificGenomics',
+    metaDescription: 'Test de Paternidad Prenatal en Chile por PacificGenomics: pruebas de ADN prenatal seguras y confidenciales. Resultados en 10 días hábiles. Atención en Santiago.'
+  },
   ve: {
     code: 've',
     name: 'Venezuela',
