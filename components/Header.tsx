@@ -49,14 +49,25 @@ export default function Header({ country = countries.co }: HeaderProps) {
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center gap-4">
               <div className={country.code === 'ar' ? '' : 'bg-sky-100 px-2 py-1 rounded'}>
-                <Image
-                  src="/imgs/logo.png"
-                  alt="SouthGenetics - Test Paternidad Prenatal - Pruebas de paternidad prenatal certificadas"
-                  width={100}
-                  height={30}
-                  className="h-6 w-auto object-contain"
-                  priority
-                />
+                {country.code === 'cl' ? (
+                  <Image
+                    src="https://pacificgenomics.cl/wp-content/uploads/2024/07/logo-pacificgenomics.svg"
+                    alt="PacificGenomics - Test Paternidad Prenatal - Pruebas de paternidad prenatal certificadas"
+                    width={120}
+                    height={32}
+                    className="h-6 w-auto object-contain"
+                    priority
+                  />
+                ) : (
+                  <Image
+                    src="/imgs/logo.png"
+                    alt="SouthGenetics - Test Paternidad Prenatal - Pruebas de paternidad prenatal certificadas"
+                    width={100}
+                    height={30}
+                    className="h-6 w-auto object-contain"
+                    priority
+                  />
+                )}
               </div>
               <div className="hidden md:flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
