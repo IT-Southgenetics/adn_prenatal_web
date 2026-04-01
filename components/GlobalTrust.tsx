@@ -2,8 +2,14 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { countries, type CountryConfig } from '@/config/countries.config'
 
-export default function GlobalTrust() {
+interface GlobalTrustProps {
+  country?: CountryConfig
+}
+
+export default function GlobalTrust({ country = countries.co }: GlobalTrustProps) {
+  const isChile = country.code === 'cl'
   return (
     <section className="relative py-8 bg-gray-900 text-white">
       <div className="container-custom">
@@ -17,15 +23,23 @@ export default function GlobalTrust() {
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
             <div className="flex flex-col items-start gap-2">
               <Image
-                src="/imgs/logo.png"
-                alt="SouthGenetics - Test Paternidad Prenatal - Laboratorio de pruebas de paternidad prenatal certificado"
+                src={
+                  isChile
+                    ? 'https://pacificgenomics.cl/wp-content/uploads/2024/07/logo-pacificgenomics.svg'
+                    : '/imgs/logo.png'
+                }
+                alt={
+                  isChile
+                    ? 'PacificGenomics - Test Paternidad Prenatal - Laboratorio de pruebas de paternidad prenatal certificado'
+                    : 'SouthGenetics - Test Paternidad Prenatal - Laboratorio de pruebas de paternidad prenatal certificado'
+                }
                 width={180}
                 height={60}
                 className="w-44 h-auto object-contain"
                 priority
               />
               <span className="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold">
-                SouthGenetics
+                {isChile ? 'PacificGenomics' : 'SouthGenetics'}
               </span>
             </div>
             <div className="flex flex-col items-start gap-2">
