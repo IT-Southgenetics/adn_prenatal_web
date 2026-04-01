@@ -50,7 +50,13 @@ export default function Hero({ country = countries.co }: HeroProps) {
               >
                 Prueba de Paternidad{' '}
                 <span className="text-blue-600">Prenatal</span>{' '}
-                {country.code === 'co' ? 'en Cali' : country.code === 'ar' ? 'en Argentina' : 'en Venezuela'}
+                {country.code === 'co'
+                  ? 'en Cali'
+                  : country.code === 'ar'
+                  ? 'en Argentina'
+                  : country.code === 'cl'
+                  ? 'en Chile'
+                  : 'en Venezuela'}
               </motion.h1>
               
               <motion.p 
@@ -64,6 +70,8 @@ export default function Hero({ country = countries.co }: HeroProps) {
                   ? ' Resultados certificados internacionalmente rápidos, seguros y accesibles a partir de la semana 7 de embarazo.'
                   : country.code === 'ar'
                   ? ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en Buenos Aires y Belgrano.'
+                  : country.code === 'cl'
+                  ? ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en Santiago.'
                   : ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en Caracas solamente.'
                 }
               </motion.p>

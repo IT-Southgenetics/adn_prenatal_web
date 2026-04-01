@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Globe } from 'lucide-react'
 import { getAllCountries, type CountryConfig } from '@/config/countries.config'
@@ -8,6 +9,25 @@ import { getAllCountries, type CountryConfig } from '@/config/countries.config'
 interface CountrySelectorProps {
   currentCountry: CountryConfig
   variant?: 'header' | 'footer'
+}
+
+const flagIconByCode: Record<string, { src: string; alt: string }> = {
+  co: {
+    src: 'https://flagcdn.com/w40/co.png',
+    alt: 'Bandera de Colombia',
+  },
+  ar: {
+    src: 'https://flagcdn.com/w40/ar.png',
+    alt: 'Bandera de Argentina',
+  },
+  ve: {
+    src: 'https://flagcdn.com/w40/ve.png',
+    alt: 'Bandera de Venezuela',
+  },
+  cl: {
+    src: 'https://img.freepik.com/vector-premium/ilustracion-vectorial-digital-icono-circulo-bandera-chile_1143296-1720.jpg?semt=ais_incoming&w=740&q=80',
+    alt: 'Bandera de Chile estilo circular',
+  },
 }
 
 export default function CountrySelector({ currentCountry, variant = 'header' }: CountrySelectorProps) {
@@ -48,7 +68,7 @@ export default function CountrySelector({ currentCountry, variant = 'header' }: 
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`
-          flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200
+          flex items-center gap-1.5 px-2.5 py-2 rounded-lg transition-all duration-200
           ${isHeader 
             ? 'text-white bg-white/10 hover:bg-white/20 border border-white/30' 
             : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -58,9 +78,22 @@ export default function CountrySelector({ currentCountry, variant = 'header' }: 
         aria-haspopup="listbox"
       >
         <Globe className="w-4 h-4" />
-        <span className="text-sm font-medium">
-          <span className="mr-1">{currentCountry.flag}</span>
-          <span className="hidden sm:inline">{currentCountry.name}</span>
+        <span className="text-xs font-medium flex items-center gap-1.5">
+          {flagIconByCode[currentCountry.code] && (
+            <span className="relative inline-flex h-4 w-4 overflow-hidden rounded-full ring-1 ring-white/40">
+              <Image
+                src={flagIconByCode[currentCountry.code].src}
+                alt={flagIconByCode[currentCountry.code].alt}
+                fill
+                sizes="20px"
+                className="object-cover"
+                style={currentCountry.code === 'cl' ? { transform: 'scale(1.5)' } : undefined}
+              />
+            </span>
+          )}
+          <span className={isHeader ? 'hidden md:inline' : 'hidden sm:inline'}>
+            {currentCountry.name}
+          </span>
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -107,7 +140,18 @@ export default function CountrySelector({ currentCountry, variant = 'header' }: 
                   role="option"
                   aria-selected={country.code === currentCountry.code}
                 >
-                  <span className="text-lg">{country.flag}</span>
+                  {flagIconByCode[country.code] && (
+                    <span className="relative inline-flex h-5 w-5 overflow-hidden rounded-full ring-1 ring-black/10">
+                      <Image
+                        src={flagIconByCode[country.code].src}
+                        alt={flagIconByCode[country.code].alt}
+                        fill
+                        sizes="20px"
+                        className="object-cover"
+                        style={country.code === 'cl' ? { transform: 'scale(1.5)' } : undefined}
+                      />
+                    </span>
+                  )}
                   <div className="flex-1">
                     <span className="font-medium">{country.name}</span>
                   </div>

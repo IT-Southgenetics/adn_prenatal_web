@@ -47,7 +47,7 @@ export default function Header({ country = countries.co }: HeaderProps) {
       <div className="bg-ocean-700 text-white py-2">
         <div className="container-custom">
           <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 mr-6 md:mr-10">
               <div className={country.code === 'ar' ? '' : 'bg-sky-100 px-2 py-1 rounded'}>
                 {country.code === 'cl' ? (
                   <Image
