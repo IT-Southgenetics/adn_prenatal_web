@@ -2,13 +2,22 @@
 
 import { motion } from 'framer-motion'
 import { Instagram } from 'lucide-react'
+import { countries, type CountryConfig } from '@/config/countries.config'
 
-export default function InstagramBanner() {
+interface InstagramBannerProps {
+  country?: CountryConfig
+}
+
+export default function InstagramBanner({ country = countries.co }: InstagramBannerProps) {
+  const isChile = country.code === 'cl'
+  const instagramHref = isChile
+    ? 'https://www.instagram.com/pacificgenomics/'
+    : 'https://www.instagram.com/southgeneticsargentina/'
   return (
     <section className="py-16 bg-gradient-to-r from-purple-50 via-pink-50 to-orange-50">
       <div className="container-custom">
         <motion.a
-          href="https://www.instagram.com/southgeneticsargentina/"
+          href={instagramHref}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 30 }}
@@ -19,7 +28,7 @@ export default function InstagramBanner() {
         >
           <div className="absolute -top-3 left-6 sm:left-8 inline-flex items-center gap-2 rounded-full bg-pink-100/80 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-pink-700 shadow-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-pink-500 shadow-[0_0_0_4px_rgba(244,114,182,0.35)]" />
-            Comunidad SouthGenetics
+            {isChile ? 'Comunidad PacificGenomics' : 'Comunidad SouthGenetics'}
           </div>
 
           <div className="flex items-center justify-center w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
@@ -31,11 +40,7 @@ export default function InstagramBanner() {
               Instagram oficial
             </p>
             <p className="text-xl md:text-2xl font-semibold text-gray-900">
-              Seguinos para conocer novedades, casos clínicos y lanzamientos.
-            </p>
-            <p className="text-sm md:text-base text-gray-500">
-              Encontranos como{' '}
-              <span className="font-semibold text-pink-600">@southgeneticsargentina</span> y sumate a nuestra comunidad profesional.
+              Seguinos para conocer más acerca de nuestra amplia variedad de pruebas y nuevos lanzamientos.
             </p>
           </div>
 
