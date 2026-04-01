@@ -34,13 +34,23 @@ export default function Footer({ country = countries.co }: FooterProps) {
             className="lg:col-span-2"
           >
             <div className="flex items-center gap-3 mb-4">
-              <Image
-                src="/imgs/logo.png"
-                alt="SouthGenetics - Test Paternidad Prenatal - Pruebas de paternidad prenatal no invasivas internacionales"
-                width={150}
-                height={50}
-                className="h-10 w-auto object-contain"
-              />
+              {country.code === 'cl' ? (
+                <Image
+                  src="https://pacificgenomics.cl/wp-content/uploads/2024/07/logo-pacificgenomics.svg"
+                  alt="PacificGenomics - Test Paternidad Prenatal - Pruebas de paternidad prenatal no invasivas internacionales"
+                  width={150}
+                  height={50}
+                  className="h-10 w-auto object-contain"
+                />
+              ) : (
+                <Image
+                  src="/imgs/logo.png"
+                  alt="SouthGenetics - Test Paternidad Prenatal - Pruebas de paternidad prenatal no invasivas internacionales"
+                  width={150}
+                  height={50}
+                  className="h-10 w-auto object-contain"
+                />
+              )}
               <h3 className="text-xl font-bold gradient-text">
                 Test Paternidad Prenatal
               </h3>
