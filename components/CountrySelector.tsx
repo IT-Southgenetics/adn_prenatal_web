@@ -31,7 +31,7 @@ export default function CountrySelector({ currentCountry, variant = 'header' }: 
     if (country.code !== currentCountry.code) {
       // Obtener la ruta actual sin el prefijo de país
       const currentPath = window.location.pathname
-        .replace(/^\/(ar|ve|co)/, '')
+        .replace(/^\/(ar|ve|co|cl)/, '')
         .replace(/^\//, '')
       
       // Construir la nueva URL
