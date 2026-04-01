@@ -19,14 +19,14 @@ export default function ArgentinaPage() {
     <main className="min-h-screen">
       <Header country={country} />
       <Hero country={country} />
-      <Allies />
+      <Allies country={country} />
       <Empathy country={country} />
       <Experience />
       <HowItWorksAr />
-      <GlobalTrust />
+      <GlobalTrust country={country} />
       <Benefits country={country} />
       <FAQ country={country} />
-      <InstagramBanner />
+      <InstagramBanner country={country} />
       <ContactCTA country={country} />
       <Footer country={country} />
     </main>
