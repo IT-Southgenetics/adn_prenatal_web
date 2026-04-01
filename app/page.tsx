@@ -18,14 +18,14 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero country={country} />
-      <Allies />
+      <Allies country={country} />
       <Empathy country={country} />
       <Experience />
       <HowItWorks country={country} />
-      <GlobalTrust />
+      <GlobalTrust country={country} />
       <Benefits country={country} />
       <FAQ country={country} />
-      <InstagramBanner />
+      <InstagramBanner country={country} />
       <ContactCTA country={country} />
       <Footer country={country} />
     </main>
