@@ -3,8 +3,14 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { ShieldCheck } from 'lucide-react'
+import { countries, type CountryConfig } from '@/config/countries.config'
 
-export default function Allies() {
+interface AlliesProps {
+  country?: CountryConfig
+}
+
+export default function Allies({ country = countries.co }: AlliesProps) {
+  const isChile = country.code === 'cl'
   return (
     <section className="relative py-8 bg-gray-900 text-white">
       <div className="container-custom">
@@ -21,15 +27,28 @@ export default function Allies() {
             </span>
             <div className="flex items-center gap-6">
               <div className="flex flex-col leading-tight">
-                <span className="text-xs md:text-sm uppercase tracking-[0.35em] text-white/50 font-semibold">SouthGenetics</span>
-                <Image
-                  src="/imgs/logo.png"
-                  alt="SouthGenetics - Test Paternidad Prenatal - Servicios de prueba de paternidad prenatal no invasiva"
-                  width={200}
-                  height={70}
-                  className="w-48 h-auto object-contain"
-                  priority
-                />
+                <span className="text-xs md:text-sm uppercase tracking-[0.35em] text-white/50 font-semibold">
+                  {isChile ? 'PacificGenomics' : 'SouthGenetics'}
+                </span>
+                {isChile ? (
+                  <Image
+                    src="https://pacificgenomics.cl/wp-content/uploads/2024/07/logo-pacificgenomics.svg"
+                    alt="PacificGenomics - Test Paternidad Prenatal - Servicios de prueba de paternidad prenatal no invasiva"
+                    width={200}
+                    height={70}
+                    className="w-48 h-auto object-contain"
+                    priority
+                  />
+                ) : (
+                  <Image
+                    src="/imgs/logo.png"
+                    alt="SouthGenetics - Test Paternidad Prenatal - Servicios de prueba de paternidad prenatal no invasiva"
+                    width={200}
+                    height={70}
+                    className="w-48 h-auto object-contain"
+                    priority
+                  />
+                )}
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="text-xs md:text-sm uppercase tracking-[0.35em] text-white/50 font-semibold">Respaldado internacional</span>
