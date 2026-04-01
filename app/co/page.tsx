@@ -18,14 +18,14 @@ export default function ColombiaPage() {
     <main className="min-h-screen">
       <HeaderCo />
       <HeroCo />
-      <Allies />
+      <Allies country={country} />
       <EmpathyCo />
       <Experience />
       <HowItWorksCo />
-      <GlobalTrust />
+      <GlobalTrust country={country} />
       <Benefits country={country} />
       <FAQCo />
-      <InstagramBanner />
+      <InstagramBanner country={country} />
       <ContactCTACo />
       <FooterCo />
     </main>
