@@ -16,8 +16,8 @@ export default function InstagramBanner({ country = countries.co }: InstagramBan
   const triColor = 'bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400'
 
   return (
-    <section className="overflow-visible py-16 pt-20 bg-gradient-to-r from-purple-50 via-pink-50 to-orange-50">
-      <div className="container-custom overflow-visible">
+    <section className="relative overflow-visible bg-gradient-to-r from-purple-50 via-pink-50 to-orange-50">
+      <div className="container-custom overflow-visible pt-20 pb-10 sm:pb-12">
         <motion.a
           href={instagramHref}
           target="_blank"
@@ -58,6 +58,11 @@ export default function InstagramBanner({ country = countries.co }: InstagramBan
           </div>
         </motion.a>
       </div>
+      {/* Funde el degradado horizontal hacia el blanco de la siguiente sección (evita el corte seco) */}
+      <div
+        className="pointer-events-none h-24 w-full bg-gradient-to-b from-transparent to-white sm:h-32 md:h-40"
+        aria-hidden
+      />
     </section>
   )
 }
