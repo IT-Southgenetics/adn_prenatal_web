@@ -15,26 +15,26 @@ function empathyTestimonial(c: CountryConfig): { quote: string; attribution: str
     case 'ar':
       return {
         quote:
-          'Me escucharon de verdad y me fueron explicando cada instancia sin apuro. Desde el primer contacto sentí acompañamiento profesional y humano.',
+          'Muy buena onda, sin apuro. Me fueron contando todo paso a paso, con claridad y cercanía. Desde el primer hola sentí que me escuchaban de verdad.',
         attribution: '— Juana Martínez, CABA',
       }
     case 'cl':
       return {
         quote:
-          'Fueron muy empáticos y me aclararon cada detalle con calma. Desde la primera conversación sentí apoyo profesional y cercano.',
+          'Fueron muy amables y me explicaron todo con calma, en confianza. Desde la primera llamada sentí que podía confiar.',
         attribution: '— Valentina, Las Condes',
       }
     case 've':
       return {
         quote:
-          'Me tomaron el tiempo para orientarme en cada fase, siempre con respeto. Desde el primer mensaje sentí acompañamiento serio y humano.',
+          'Me trataron con mucha amabilidad y sin ponerme prisa. Desde el primer mensaje sentí que me acompañaban bien y con respeto.',
         attribution: '— Andrea, Caracas',
       }
     case 'co':
     default:
       return {
         quote:
-          'Me brindaron mucha contención y me explicaron el procedimiento con paciencia. Desde el primer contacto sentí que estaba en buenas manos.',
+          'Me recibieron con calidez. Me explicaron todo con paciencia y sin hacerme sentir incómoda. Desde el comienzo sentí que estaba en buenas manos.',
         attribution: '— Laura, Cali',
       }
   }

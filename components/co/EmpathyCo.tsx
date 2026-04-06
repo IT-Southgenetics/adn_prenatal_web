@@ -39,7 +39,7 @@ export default function EmpathyCo() {
                 className="bg-gradient-to-br from-orange-100 to-yellow-100 rounded-xl shadow-lg p-6"
               >
                 <p className="text-gray-700 italic leading-relaxed">
-                  &ldquo;En el Valle valoramos cuando te hablan sin vueltas: me guiaron en cada etapa con paciencia y sin tecnicismos de más. Sentí respaldo desde el primer día.&rdquo;
+                  &ldquo;Me guiaron con paciencia y buena onda, sin complicarme con términos raros. Desde el primer día me sentí acompañada y con tranquilidad para seguir adelante.&rdquo;
                 </p>
                 <p className="text-gray-600 text-sm mt-3">— Daniela, Cali</p>
               </motion.div>
