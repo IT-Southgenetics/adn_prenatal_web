@@ -6,9 +6,11 @@ import { MessageCircle, Droplets, FileCheck } from 'lucide-react'
 import Image from 'next/image'
 import { smoothScrollTo } from '@/utils/smoothScroll'
 import WhatsAppModal from '@/components/WhatsAppModal'
-import { countries } from '@/config/countries.config'
+import { countries, type CountryConfig } from '@/config/countries.config'
 
-const country = countries.ar
+interface HowItWorksArProps {
+  country?: CountryConfig
+}
 
 const steps = [
   {
@@ -46,7 +48,7 @@ const steps = [
   }
 ]
 
-export default function HowItWorksAr() {
+export default function HowItWorksAr({ country = countries.ar }: HowItWorksArProps) {
   const [showWhatsAppModal, setShowWhatsAppModal] = useState(false)
 
   return (

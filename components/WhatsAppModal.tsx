@@ -67,13 +67,18 @@ export default function WhatsAppModal({ isOpen, onClose, country = countries.co 
               style={{ marginTop: 'auto', marginBottom: 'auto' }}
             >
               {/* Header fijo */}
-              <div className="flex items-center justify-between p-6 md:p-8 border-b border-gray-200 flex-shrink-0">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  Información sobre la prueba de paternidad prenatal
-                </h2>
+              <div className="flex items-start justify-between gap-4 p-6 md:p-8 border-b border-gray-200 flex-shrink-0">
+                <div className="min-w-0 flex-1 pr-2">
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    Información sobre la prueba de paternidad prenatal
+                  </h2>
+                  {country.whatsappContactLine ? (
+                    <p className="mt-2 text-sm font-medium text-ocean-700">{country.whatsappContactLine}</p>
+                  ) : null}
+                </div>
                 <button
                   onClick={onClose}
-                  className="text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                  className="text-gray-400 hover:text-gray-600 transition-colors duration-200 shrink-0"
                 >
                   <X className="w-6 h-6" />
                 </button>

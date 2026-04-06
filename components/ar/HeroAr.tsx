@@ -97,7 +97,7 @@ export default function HeroAr() {
             </motion.div>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-6"
+              className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -105,14 +105,14 @@ export default function HeroAr() {
               <button
                 type="button"
                 onClick={() => setShowWhatsAppModal(true)}
-                className="btn-secondary text-center group text-lg md:text-xl py-4 px-8"
+                className="btn-secondary group inline-flex h-12 w-full max-w-[280px] items-center justify-center gap-2 px-4 text-center text-base sm:w-[220px] sm:max-w-none"
               >
-                <MessageCircle className="w-6 h-6 group-hover:animate-pulse" />
+                <MessageCircle className="h-5 w-5 shrink-0 group-hover:animate-pulse" />
                 Hablar por WhatsApp
               </button>
               <a
                 href="/ar/formulario"
-                className="btn-outline border-ocean-600 text-ocean-600 hover:bg-ocean-600 hover:text-white text-center text-lg md:text-xl py-4 px-8"
+                className="btn-outline inline-flex h-12 w-full max-w-[280px] items-center justify-center border-ocean-600 px-4 text-center text-base text-ocean-600 hover:bg-ocean-600 hover:text-white sm:w-[220px] sm:max-w-none"
               >
                 Solicitar información
               </a>

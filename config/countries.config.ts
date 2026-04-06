@@ -24,6 +24,8 @@ export interface CountryConfig {
   deliveryDays: string
   /** Dirección física para pie de página y mapa (opcional) */
   officeAddress?: string
+  /** Texto opcional en el modal de WhatsApp (ej. nombre del contacto comercial) */
+  whatsappContactLine?: string
   // Términos localizados
   terms: {
     money: string // "plata" en AR, "dinero" en otros
@@ -135,8 +137,9 @@ export const countries: Record<string, CountryConfig> = {
     paymentMethods: ['Transferencia bancaria', 'Webpay', 'Tarjetas débito/crédito', 'Khipu', 'Mach'],
     businessHours: 'Abierto de 9:00 a 18:00',
     deliveryDays: '10 días hábiles',
-    officeAddress:
-      'Mariano Sánchez Fontecilla 310, oficina 115, piso 2, 7550000 Las Condes, Región Metropolitana, Chile',
+    officeAddress: 'Cerro del Plomo 568, comuna Las Condes, Región Metropolitana, Chile',
+    whatsappContactLine:
+      'Te atiende Carolina Acevedo, equipo comercial PacificGenomics Chile.',
     terms: {
       money: 'plata',
       mom: 'mamá',

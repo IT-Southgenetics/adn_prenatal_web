@@ -22,7 +22,7 @@ export default function ChilePage() {
       <Allies country={country} />
       <Empathy country={country} />
       <Experience />
-      <HowItWorksAr />
+      <HowItWorksAr country={country} />
       <GlobalTrust country={country} />
       <Benefits country={country} />
       <FAQ country={country} />
