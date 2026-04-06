@@ -39,9 +39,9 @@ export default function EmpathyCo() {
                 className="bg-gradient-to-br from-orange-100 to-yellow-100 rounded-xl shadow-lg p-6"
               >
                 <p className="text-gray-700 italic leading-relaxed">
-                  "Me atendieron con una paciencia increíble. Siempre estuvieron pendientes, explicando cada paso con ese tono cercano que tanto agradecemos en Cali."
+                  &ldquo;En el Valle valoramos cuando te hablan sin vueltas: me guiaron en cada etapa con paciencia y sin tecnicismos de más. Sentí respaldo desde el primer día.&rdquo;
                 </p>
-                <p className="text-gray-600 text-sm mt-3">— Daniela, Bogotá</p>
+                <p className="text-gray-600 text-sm mt-3">— Daniela, Cali</p>
               </motion.div>
             </motion.div>
 

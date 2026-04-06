@@ -10,7 +10,38 @@ interface EmpathyProps {
   country?: CountryConfig
 }
 
+function empathyTestimonial(c: CountryConfig): { quote: string; attribution: string } {
+  switch (c.code) {
+    case 'ar':
+      return {
+        quote:
+          'Me escucharon de verdad y me fueron explicando cada instancia sin apuro. Desde el primer contacto sentí acompañamiento profesional y humano.',
+        attribution: '— Juana Martínez, CABA',
+      }
+    case 'cl':
+      return {
+        quote:
+          'Fueron muy empáticos y me aclararon cada detalle con calma. Desde la primera conversación sentí apoyo profesional y cercano.',
+        attribution: '— Valentina, Las Condes',
+      }
+    case 've':
+      return {
+        quote:
+          'Me tomaron el tiempo para orientarme en cada fase, siempre con respeto. Desde el primer mensaje sentí acompañamiento serio y humano.',
+        attribution: '— Andrea, Caracas',
+      }
+    case 'co':
+    default:
+      return {
+        quote:
+          'Me brindaron mucha contención y me explicaron el procedimiento con paciencia. Desde el primer contacto sentí que estaba en buenas manos.',
+        attribution: '— Laura, Cali',
+      }
+  }
+}
+
 export default function Empathy({ country = countries.co }: EmpathyProps) {
+  const { quote, attribution } = empathyTestimonial(country)
   return (
     <section className="relative py-20 bg-gradient-to-b from-white via-orange-50/50 to-orange-50">
       {/* Gradiente adicional de desvanecido */}
@@ -48,12 +79,8 @@ export default function Empathy({ country = countries.co }: EmpathyProps) {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="bg-gradient-to-br from-orange-100 to-yellow-100 rounded-xl shadow-lg p-6"
             >
-              <p className="text-gray-700 italic leading-relaxed">
-                "El equipo fue muy comprensivo y me explicó cada paso. Sentí respaldo profesional y humano desde la primera llamada."
-              </p>
-              <p className="text-gray-600 text-sm mt-3">
-                {country.code === 'ar' ? '— Juana Martínez, CABA' : `— ${country.mainCity}, ${country.name}`}
-              </p>
+              <p className="text-gray-700 italic leading-relaxed">&ldquo;{quote}&rdquo;</p>
+              <p className="text-gray-600 text-sm mt-3">{attribution}</p>
             </motion.div>
           </motion.div>
 
