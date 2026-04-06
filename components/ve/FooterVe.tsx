@@ -2,11 +2,12 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, Shield, Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
+import { MessageCircle, Shield, Phone, Mail, MapPin, ArrowUp, Clock } from 'lucide-react'
 import Image from 'next/image'
 import { countries } from '@/config/countries.config'
 import WhatsAppModalVe from './WhatsAppModalVe'
 import CountrySelector from '../CountrySelector'
+import FooterMapEmbed from '../FooterMapEmbed'
 
 export default function FooterVe() {
   const [showWhatsAppModal, setShowWhatsAppModal] = useState(false)
@@ -97,8 +98,14 @@ export default function FooterVe() {
                   <span className="text-gray-300">{country.email}</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="w-5 h-5 text-accent-400" />
-                  <span className="text-gray-300">{country.mainCity}, {country.name}</span>
+                  <Clock className="h-5 w-5 shrink-0 text-accent-400" />
+                  <span className="text-gray-300">{country.businessHours}</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-accent-400" />
+                  <span className="text-gray-300 whitespace-pre-line">
+                    {country.officeAddress ?? `${country.mainCity}, ${country.name}`}
+                  </span>
                 </div>
               </div>
 
@@ -115,6 +122,17 @@ export default function FooterVe() {
               </div>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            viewport={{ once: true }}
+            className="mt-10"
+          >
+            <h4 className="mb-3 text-lg font-semibold">Ubicación</h4>
+            <FooterMapEmbed country={country} />
+          </motion.div>
         </div>
 
         {/* Línea divisoria */}

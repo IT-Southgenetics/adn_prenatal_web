@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, Shield, Phone, Mail, MapPin, ArrowUp } from 'lucide-react'
+import { MessageCircle, Shield, Phone, Mail, MapPin, ArrowUp, Clock } from 'lucide-react'
 import Image from 'next/image'
 import WhatsAppModal from './WhatsAppModal'
 import CountrySelector from './CountrySelector'
+import FooterMapEmbed from './FooterMapEmbed'
 import { countries, type CountryConfig } from '@/config/countries.config'
 
 interface FooterProps {
@@ -56,12 +57,15 @@ export default function Footer({ country = countries.co }: FooterProps) {
               </h3>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              {country.code === 'co' 
+              {country.code === 'co'
                 ? 'Pruebas de paternidad prenatal precisas y seguras para familias en todo el mundo. Utilizamos tecnología de vanguardia para brindarte resultados confiables y confidenciales sin importar el país donde te encuentres.'
                 : country.code === 'ar'
-                ? `Pruebas de paternidad prenatal precisas y seguras para familias en ${country.name}. Utilizamos tecnología de vanguardia para brindarte resultados confiables y confidenciales en Buenos Aires y Belgrano.`
-                : `Pruebas de paternidad prenatal precisas y seguras para familias en ${country.name}. Utilizamos tecnología de vanguardia para brindarte resultados confiables y confidenciales en Caracas solamente.`
-              }
+                  ? `Pruebas de paternidad prenatal precisas y seguras para familias en ${country.name}. Utilizamos tecnología de vanguardia para brindarte resultados confiables y confidenciales en Buenos Aires y Belgrano.`
+                  : country.code === 'cl'
+                    ? `Pruebas de paternidad prenatal precisas y seguras para familias en ${country.name}. Atención con PacificGenomics en Las Condes, Santiago, con resultados confiables y confidenciales.`
+                    : country.code === 've'
+                      ? `Pruebas de paternidad prenatal precisas y seguras para familias en ${country.name}. Utilizamos tecnología de vanguardia para brindarte resultados confiables y confidenciales en Caracas solamente.`
+                      : `Pruebas de paternidad prenatal precisas y seguras para familias en ${country.name}. Utilizamos tecnología de vanguardia para brindarte resultados confiables y confidenciales.`}
             </p>
             
             {/* Características destacadas */}
@@ -114,8 +118,15 @@ export default function Footer({ country = countries.co }: FooterProps) {
                 <span className="text-gray-300">{country.email}</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-accent-400" />
-                <span className="text-gray-300">{country.mainCity}{country.code !== 'co' ? `, ${country.name}` : ''}</span>
+                <Clock className="w-5 h-5 shrink-0 text-accent-400" />
+                <span className="text-gray-300">{country.businessHours}</span>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-accent-400" />
+                <span className="text-gray-300 whitespace-pre-line">
+                  {country.officeAddress ??
+                    (country.code === 'co' ? country.mainCity : `${country.mainCity}, ${country.name}`)}
+                </span>
               </div>
             </div>
 
@@ -132,6 +143,17 @@ export default function Footer({ country = countries.co }: FooterProps) {
             </div>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          viewport={{ once: true }}
+          className="mt-10"
+        >
+          <h4 className="mb-3 text-lg font-semibold">Ubicación</h4>
+          <FooterMapEmbed country={country} />
+        </motion.div>
       </div>
 
       {/* Línea divisoria */}

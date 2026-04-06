@@ -22,6 +22,8 @@ export interface CountryConfig {
   paymentMethods: string[]
   businessHours: string
   deliveryDays: string
+  /** Dirección física para pie de página y mapa (opcional) */
+  officeAddress?: string
   // Términos localizados
   terms: {
     money: string // "plata" en AR, "dinero" en otros
@@ -116,8 +118,8 @@ export const countries: Record<string, CountryConfig> = {
     fullName: 'Chile',
     currency: 'USD',
     currencySymbol: 'US$',
-    phone: '+56 9 1234 5678',
-    whatsappNumber: '56912345678',
+    phone: '+56 9 5939 2733',
+    whatsappNumber: '56959392733',
     email: 'chile@pacificgenomics.com',
     cities: ['Santiago', 'Valparaíso', 'Concepción', 'La Serena', 'Antofagasta'],
     mainCity: 'Santiago',
@@ -129,8 +131,10 @@ export const countries: Record<string, CountryConfig> = {
     urlPrefix: '/cl',
     flag: '🇨🇱',
     paymentMethods: ['Transferencia bancaria', 'Webpay', 'Tarjetas débito/crédito', 'Khipu', 'Mach'],
-    businessHours: 'Lunes a viernes 9:00 - 18:00',
+    businessHours: 'Abierto de 9:00 a 18:00',
     deliveryDays: '10 días hábiles',
+    officeAddress:
+      'Mariano Sánchez Fontecilla 310, oficina 115, piso 2, 7550000 Las Condes, Región Metropolitana, Chile',
     terms: {
       money: 'plata',
       mom: 'mamá',
