@@ -96,6 +96,8 @@ export const countries: Record<string, CountryConfig> = {
     paymentMethods: ['Transferencia bancaria', 'Mercado Pago', 'Tarjetas débito/crédito', 'Rapipago', 'Pago Fácil'],
     businessHours: 'Todos los días 9:00 - 20:00',
     deliveryDays: '10 días hábiles',
+    officeAddress:
+      'Amenábar 1945, piso 4, oficina A, C1428 Ciudad Autónoma de Buenos Aires, Argentina',
     terms: {
       money: 'plata',
       mom: 'mamá',
