@@ -55,6 +55,11 @@ const nextConfig = {
         destination: 'https://southgenetics.com/',
         permanent: true,
       },
+      {
+        source: '/cl/sobre-nosotros',
+        destination: 'https://southgenetics.com/',
+        permanent: true,
+      },
     ]
   },
 }
