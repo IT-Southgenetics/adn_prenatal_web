@@ -39,7 +39,8 @@ const steps = [
     title: 'Resultados Claros',
     description: 'En 10 días hábiles recibirás tus resultados con 99.9% de precisión. La entrega es totalmente confidencial y te ofrecemos soporte profesional para interpretar los resultados.',
     image: '/imgs/resultados-ar.png',
-    imageAlt: 'Resultados de prueba de paternidad prenatal - Certificado con 99.9% de precisión en 10 días hábiles',
+    imageAlt:
+      'Pareja revisando en tablet los resultados de la prueba de paternidad prenatal con alivio y confianza',
     color: 'from-emerald-500 to-teal-500',
     position: 'left' // imagen a la izquierda
   }
