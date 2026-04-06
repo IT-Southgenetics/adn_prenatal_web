@@ -12,6 +12,12 @@ interface HeroProps {
   country?: CountryConfig
 }
 
+function heroImageSrc(code: string) {
+  if (code === 'ar') return '/imgs/argentina_hero.png'
+  if (code === 've') return '/imgs/hero-venezuela.png'
+  return '/imgs/nano-banana-2025-10-07T14-51-23.png'
+}
+
 export default function Hero({ country = countries.co }: HeroProps) {
   const [showWhatsAppModal, setShowWhatsAppModal] = useState(false)
 
@@ -21,8 +27,12 @@ export default function Hero({ country = countries.co }: HeroProps) {
       <div className="absolute inset-0 z-0">
         <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
           <Image
-            src={country.code === 'ar' ? '/imgs/argentina_hero.png' : '/imgs/nano-banana-2025-10-07T14-51-23.png'}
-            alt="Prueba de paternidad prenatal no invasiva - Test de paternidad desde semana 7 de embarazo con resultados certificados"
+            src={heroImageSrc(country.code)}
+            alt={
+              country.code === 've'
+                ? 'Prueba de paternidad prenatal en Venezuela - Test paternidad prenatal Caracas'
+                : 'Prueba de paternidad prenatal no invasiva - Test de paternidad desde semana 7 de embarazo con resultados certificados'
+            }
             fill
             className="object-contain object-right"
             priority
