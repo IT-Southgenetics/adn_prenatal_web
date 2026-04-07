@@ -19,6 +19,7 @@ export default function Header({ country = countries.co }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
   const isHomePage = pathname === country.urlPrefix || pathname === `${country.urlPrefix}/`
+  const aboutUsHref = country.code === 'cl' ? 'https://pacificgenomics.cl/' : `${country.urlPrefix}/sobre-nosotros`
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,7 +151,8 @@ export default function Header({ country = countries.co }: HeaderProps) {
                 FAQs
               </button>
               <a
-                href={`${country.urlPrefix}/sobre-nosotros`}
+                href={aboutUsHref}
+                {...(country.code === 'cl' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 className="text-gray-700 hover:text-ocean-600 font-medium transition-colors duration-200"
               >
                 Sobre nosotros
@@ -220,7 +222,8 @@ export default function Header({ country = countries.co }: HeaderProps) {
                   FAQs
                 </button>
                 <a
-                  href={`${country.urlPrefix}/sobre-nosotros`}
+                  href={aboutUsHref}
+                  {...(country.code === 'cl' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   className="text-left text-gray-700 hover:text-ocean-600 font-medium py-2"
                 >
                   Sobre nosotros

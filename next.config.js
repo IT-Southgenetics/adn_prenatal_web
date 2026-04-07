@@ -57,7 +57,7 @@ const nextConfig = {
       },
       {
         source: '/cl/sobre-nosotros',
-        destination: 'https://southgenetics.com/',
+        destination: 'https://pacificgenomics.cl/',
         permanent: true,
       },
     ]
