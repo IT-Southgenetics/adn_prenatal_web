@@ -28,7 +28,9 @@ export default function ContactCTA({ country = countries.co }: ContactCTAProps) 
           </h2>
           
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Completa el formulario en 2 sencillos pasos y nuestro equipo se contactará contigo
+            {country.code === 'cl'
+              ? 'Escríbenos por WhatsApp y te ayudamos al instante.'
+              : 'Completa el formulario en 2 sencillos pasos y nuestro equipo se contactará contigo'}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">

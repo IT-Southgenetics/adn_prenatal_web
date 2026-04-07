@@ -20,6 +20,7 @@ export default function Header({ country = countries.co }: HeaderProps) {
   const pathname = usePathname()
   const isHomePage = pathname === country.urlPrefix || pathname === `${country.urlPrefix}/`
   const aboutUsHref = country.code === 'cl' ? 'https://pacificgenomics.cl/' : `${country.urlPrefix}/sobre-nosotros`
+  const contactLabel = country.code === 'cl' ? 'Contacto por WhatsApp' : 'Contacto'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -161,7 +162,7 @@ export default function Header({ country = countries.co }: HeaderProps) {
                 onClick={() => handleNavClick('contacto')}
                 className="text-gray-700 hover:text-ocean-600 font-medium transition-colors duration-200"
               >
-                Contacto
+                {contactLabel}
               </button>
               <button
                 type="button"
@@ -232,7 +233,7 @@ export default function Header({ country = countries.co }: HeaderProps) {
                   onClick={() => handleNavClick('contacto')}
                   className="text-left text-gray-700 hover:text-ocean-600 font-medium py-2"
                 >
-                  Contacto
+                  {contactLabel}
                 </button>
                 <button
                   type="button"
