@@ -137,7 +137,7 @@ export const countries: Record<string, CountryConfig> = {
     paymentMethods: ['Transferencia bancaria', 'Webpay', 'Tarjetas débito/crédito', 'Khipu', 'Mach'],
     businessHours: 'Abierto de 9:00 a 18:00',
     deliveryDays: '10 días hábiles',
-    officeAddress: 'Cerro del Plomo 568, comuna Las Condes, Región Metropolitana, Chile',
+    officeAddress: 'Mariano Sanchez Fontecilla 310, piso 2-142, Las Condes.',
     whatsappContactLine:
       'Te atiende Carolina Acevedo, equipo comercial PacificGenomics Chile.',
     terms: {
