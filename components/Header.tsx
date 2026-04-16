@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { smoothScrollTo } from '@/utils/smoothScroll'
 import WhatsAppModal from './WhatsAppModal'
 import CountrySelector from './CountrySelector'
+import ObfuscatedPhone from './ObfuscatedPhone'
 import { countries, type CountryConfig } from '@/config/countries.config'
 
 interface HeaderProps {
@@ -74,7 +75,11 @@ export default function Header({ country = countries.co }: HeaderProps) {
               <div className="hidden md:flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
                   <Phone className="w-4 h-4" />
-                <span>{country.phone}</span>
+                {country.code === 'cl' ? (
+                  <ObfuscatedPhone phone={country.phone} elementId="cl-phone-header" />
+                ) : (
+                  <span>{country.phone}</span>
+                )}
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />

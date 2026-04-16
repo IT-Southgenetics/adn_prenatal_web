@@ -7,6 +7,7 @@ import Image from 'next/image'
 import WhatsAppModal from './WhatsAppModal'
 import CountrySelector from './CountrySelector'
 import FooterMapEmbed from './FooterMapEmbed'
+import ObfuscatedPhone from './ObfuscatedPhone'
 import { countries, type CountryConfig } from '@/config/countries.config'
 
 interface FooterProps {
@@ -113,7 +114,13 @@ export default function Footer({ country = countries.co }: FooterProps) {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-accent-400" />
-                <span className="text-gray-300">{country.phone}</span>
+                <span className="text-gray-300">
+                  {country.code === 'cl' ? (
+                    <ObfuscatedPhone phone={country.phone} elementId="cl-phone-footer" />
+                  ) : (
+                    country.phone
+                  )}
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-accent-400" />
