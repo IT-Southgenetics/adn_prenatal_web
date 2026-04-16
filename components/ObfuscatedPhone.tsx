@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect } from 'react'
+
 interface ObfuscatedPhoneProps {
   phone: string
   elementId: string
@@ -7,7 +9,14 @@ interface ObfuscatedPhoneProps {
 
 export default function ObfuscatedPhone({ phone, elementId }: ObfuscatedPhoneProps) {
   const encoded = phone.split('').map((char) => char.charCodeAt(0)).join(',')
-  const script = `(function(){function setPhone(){var el=document.getElementById('${elementId}');if(!el||el.textContent){return;}var chars=[${encoded}];el.textContent=chars.map(function(c){return String.fromCharCode(c)}).join('');}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',setPhone);}else{setPhone();}})();`
+  const script = `(function(){var el=document.getElementById('${elementId}');if(!el||el.textContent){return;}var chars=[${encoded}];el.textContent=chars.map(function(c){return String.fromCharCode(c)}).join('');})();`
+
+  useEffect(() => {
+    const el = document.getElementById(elementId)
+    if (!el || el.textContent) return
+    const chars = encoded.split(',').map((n) => Number.parseInt(n, 10))
+    el.textContent = chars.map((c) => String.fromCharCode(c)).join('')
+  }, [elementId, encoded])
 
   return (
     <>
