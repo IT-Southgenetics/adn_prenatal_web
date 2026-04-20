@@ -34,6 +34,11 @@ export default function WhatsAppModal({ isOpen, onClose, country = countries.co 
   }, [isOpen])
 
   const handleConsultar = () => {
+    if (!country.whatsappNumber) {
+      alert('El contacto de WhatsApp para este pais esta por definir.')
+      return
+    }
+
     // Reportar conversión a Google Ads
     if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
       (window as any).gtag_report_conversion()

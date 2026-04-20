@@ -28,6 +28,10 @@ const flagIconByCode: Record<string, { src: string; alt: string }> = {
     src: 'https://img.freepik.com/vector-premium/ilustracion-vectorial-digital-icono-circulo-bandera-chile_1143296-1720.jpg?semt=ais_incoming&w=740&q=80',
     alt: 'Bandera de Chile estilo circular',
   },
+  mx: {
+    src: 'https://flagcdn.com/w40/mx.png',
+    alt: 'Bandera de México',
+  },
 }
 
 export default function CountrySelector({ currentCountry, variant = 'header' }: CountrySelectorProps) {
@@ -51,7 +55,7 @@ export default function CountrySelector({ currentCountry, variant = 'header' }: 
     if (country.code !== currentCountry.code) {
       // Obtener la ruta actual sin el prefijo de país
       const currentPath = window.location.pathname
-        .replace(/^\/(ar|ve|co|cl)/, '')
+        .replace(/^\/(ar|ve|co|cl|mx)/, '')
         .replace(/^\//, '')
       
       // Construir la nueva URL

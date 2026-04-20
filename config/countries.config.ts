@@ -24,6 +24,8 @@ export interface CountryConfig {
   deliveryDays: string
   /** Dirección física para pie de página y mapa (opcional) */
   officeAddress?: string
+  /** Si está activo, ocultamos mapa y mostramos ubicación pendiente */
+  locationPending?: boolean
   /** Texto opcional en el modal de WhatsApp (ej. nombre del contacto comercial) */
   whatsappContactLine?: string
   // Términos localizados
@@ -156,6 +158,45 @@ export const countries: Record<string, CountryConfig> = {
     metaTitle: 'Prueba de Paternidad Prenatal en Chile - Test ADN Prenatal Santiago | PacificGenomics',
     metaDescription: 'Test de Paternidad Prenatal en Chile por PacificGenomics: pruebas de ADN prenatal seguras y confidenciales. Resultados en 10 días hábiles. Atención en Santiago.'
   },
+  mx: {
+    code: 'mx',
+    name: 'México',
+    fullName: 'México',
+    currency: 'USD',
+    currencySymbol: 'US$',
+    phone: 'Por definir',
+    whatsappNumber: '',
+    email: 'Por definir',
+    cities: ['Ciudad de México', 'Guadalajara', 'Monterrey', 'Puebla', 'Querétaro'],
+    mainCity: 'Por definir',
+    hreflang: 'es-MX',
+    locale: 'es_MX',
+    timezone: 'America/Mexico_City',
+    price: 1350,
+    priceDisplay: 'US$ 1,350',
+    urlPrefix: '/mx',
+    flag: '🇲🇽',
+    paymentMethods: ['Por definir'],
+    businessHours: 'Por definir',
+    deliveryDays: '10 días hábiles',
+    locationPending: true,
+    whatsappContactLine: 'Contacto comercial por definir.',
+    terms: {
+      money: 'dinero',
+      mom: 'mamá',
+      baby: 'bebé',
+      test: 'prueba'
+    },
+    seoKeywords: [
+      'prueba paternidad prenatal mexico',
+      'test paternidad prenatal ciudad de mexico',
+      'prueba adn prenatal mexico',
+      'test paternidad embarazo mexico',
+      'prueba paternidad prenatal precio mexico'
+    ],
+    metaTitle: 'Prueba de Paternidad Prenatal en México - Test ADN Prenatal',
+    metaDescription: 'Test de Paternidad Prenatal en México: pruebas de ADN prenatal seguras y confidenciales. Resultados en 10 días hábiles.'
+  },
   ve: {
     code: 've',
     name: 'Venezuela',
@@ -217,5 +258,6 @@ export const defaultCountry = countries.co
 export const countryCodeMap: Record<string, string> = {
   'CO': 'co',
   'AR': 'ar',
+  'MX': 'mx',
   'VE': 've'
 }

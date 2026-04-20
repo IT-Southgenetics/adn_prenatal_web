@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone, Mail, MessageCircle } from 'lucide-react'
+import { Menu, X, Mail, MessageCircle } from 'lucide-react'
 import Image from 'next/image'
 import { smoothScrollTo } from '@/utils/smoothScroll'
 import { countries } from '@/config/countries.config'
@@ -56,10 +56,6 @@ export default function HeaderVe() {
                 />
               </div>
               <div className="hidden md:flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>{country.phone}</span>
-                </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
                   <span>{country.email}</span>

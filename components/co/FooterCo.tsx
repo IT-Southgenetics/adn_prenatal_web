@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MessageCircle, Shield, Phone, Mail, MapPin, ArrowUp, Clock } from 'lucide-react'
+import { MessageCircle, Shield, Mail, MapPin, ArrowUp, Clock } from 'lucide-react'
 import Image from 'next/image'
 import { countries } from '@/config/countries.config'
 import WhatsAppModal from '../WhatsAppModal'
@@ -89,10 +89,6 @@ export default function FooterCo() {
           >
             <h4 className="text-lg font-semibold mb-4">Contacto</h4>
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-accent-400" />
-                <span className="text-gray-300">{country.phone}</span>
-              </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-accent-400" />
                 <span className="text-gray-300">{country.email}</span>

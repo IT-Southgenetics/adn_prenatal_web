@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Phone, Mail } from 'lucide-react'
+import { Menu, X, Mail } from 'lucide-react'
 import Image from 'next/image'
 import { smoothScrollTo } from '@/utils/smoothScroll'
 import WhatsAppModal from '../WhatsAppModal'
@@ -52,10 +52,6 @@ export default function HeaderCo() {
                 />
               </div>
               <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4" />
-                  <span>+57 3002315914</span>
-                </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
                   <span>cjflorez@southgenetics.com</span>

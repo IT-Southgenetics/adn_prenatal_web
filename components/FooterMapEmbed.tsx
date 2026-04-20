@@ -12,6 +12,14 @@ function mapSearchQuery(country: CountryConfig): string {
 }
 
 export default function FooterMapEmbed({ country }: { country: CountryConfig }) {
+  if (country.locationPending) {
+    return (
+      <div className="rounded-lg border border-navy-700 bg-navy-800 p-4 text-sm text-gray-200 shadow-lg">
+        Ubicacion por confirmar para {country.fullName}. Actualizaremos esta seccion en breve.
+      </div>
+    )
+  }
+
   const query = mapSearchQuery(country)
   const q = encodeURIComponent(query)
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${q}`
