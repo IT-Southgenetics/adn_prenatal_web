@@ -126,6 +126,14 @@ export default function Footer({ country = countries.co }: FooterProps) {
                     (country.code === 'co' ? country.mainCity : `${country.mainCity}, ${country.name}`)}
                 </span>
               </div>
+              {country.code === 'mx' && country.officePhones?.length ? (
+                <div className="flex items-start space-x-3">
+                  <span className="mt-0.5 h-5 w-5 shrink-0 text-accent-400 text-center font-semibold">#</span>
+                  <span className="text-gray-300 whitespace-pre-line">
+                    {`Tel oficina: ${country.officePhones.join(', ')}`}
+                  </span>
+                </div>
+              ) : null}
             </div>
 
             {/* Botón de WhatsApp */}

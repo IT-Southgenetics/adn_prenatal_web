@@ -26,6 +26,8 @@ export interface CountryConfig {
   officeAddress?: string
   /** Si está activo, ocultamos mapa y mostramos ubicación pendiente */
   locationPending?: boolean
+  /** Teléfonos de oficina para mostrar en panel de contacto (opcional) */
+  officePhones?: string[]
   /** Texto opcional en el modal de WhatsApp (ej. nombre del contacto comercial) */
   whatsappContactLine?: string
   // Términos localizados
@@ -164,11 +166,11 @@ export const countries: Record<string, CountryConfig> = {
     fullName: 'México',
     currency: 'USD',
     currencySymbol: 'US$',
-    phone: 'Por definir',
-    whatsappNumber: '',
-    email: 'Por definir',
+    phone: '55 5202 9687',
+    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_MX ?? '',
+    email: 'cobranzasnecbbmexico@southgenetics.com',
     cities: ['Ciudad de México', 'Guadalajara', 'Monterrey', 'Puebla', 'Querétaro'],
-    mainCity: 'Por definir',
+    mainCity: 'CDMX',
     hreflang: 'es-MX',
     locale: 'es_MX',
     timezone: 'America/Mexico_City',
@@ -177,9 +179,12 @@ export const countries: Record<string, CountryConfig> = {
     urlPrefix: '/mx',
     flag: '🇲🇽',
     paymentMethods: ['Por definir'],
-    businessHours: 'Por definir',
+    businessHours: 'De 9 a 17 hrs.',
     deliveryDays: '10 días hábiles',
-    locationPending: true,
+    locationPending: false,
+    officeAddress:
+      'Calle Montecito 38 piso 12, OF 20 y 21, Col. Napoles, Alcaldia Benito Juarez, C. P. 03810, CDMX',
+    officePhones: ['55 5202 9687', '55 5202 2580', '55 5202 2920'],
     whatsappContactLine: 'Contacto comercial por definir.',
     terms: {
       money: 'dinero',
