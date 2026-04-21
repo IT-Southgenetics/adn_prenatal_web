@@ -167,7 +167,7 @@ export const countries: Record<string, CountryConfig> = {
     currency: 'USD',
     currencySymbol: 'US$',
     phone: '55 5202 9687',
-    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_MX ?? '',
+    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_MX || '525526543920',
     email: 'cobranzasnecbbmexico@southgenetics.com',
     cities: ['Ciudad de México', 'Guadalajara', 'Monterrey', 'Puebla', 'Querétaro'],
     mainCity: 'CDMX',
