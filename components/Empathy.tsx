@@ -30,6 +30,12 @@ function empathyTestimonial(c: CountryConfig): { quote: string; attribution: str
           'Me trataron con mucha amabilidad y sin ponerme prisa. Desde el primer mensaje sentí que me acompañaban bien y con respeto.',
         attribution: '— Andrea, Caracas',
       }
+    case 'mx':
+      return {
+        quote:
+          'Me atendieron con muchísima calidez. Me explicaron todo con paciencia y sin hacerme sentir incómoda. Desde el inicio sentí que estaba en buenas manos.',
+        attribution: '— Carla, CDMX',
+      }
     case 'co':
     default:
       return {
