@@ -18,6 +18,44 @@ function heroImageSrc(code: string) {
   return '/imgs/nano-banana-2025-10-07T14-51-23.png'
 }
 
+function heroAlt(code: string) {
+  if (code === 've') {
+    return 'Prueba de paternidad prenatal en Venezuela - Test paternidad prenatal Caracas'
+  }
+  if (code === 'mx') {
+    return 'Prueba de paternidad prenatal en Mexico - Test de paternidad prenatal con resultados certificados'
+  }
+  return 'Prueba de paternidad prenatal no invasiva - Test de paternidad desde semana 7 de embarazo con resultados certificados'
+}
+
+function heroLocationLabel(code: string) {
+  if (code === 'co') return 'en Cali'
+  if (code === 'ar') return 'en Argentina'
+  if (code === 'cl') return 'en Chile'
+  if (code === 've') return 'en Venezuela'
+  if (code === 'mx') return 'en Mexico'
+  return ''
+}
+
+function heroDescriptionByCountry(code: string) {
+  if (code === 'co') {
+    return ' Resultados certificados internacionalmente rápidos, seguros y accesibles a partir de la semana 7 de embarazo.'
+  }
+  if (code === 'ar') {
+    return ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en Buenos Aires y Belgrano.'
+  }
+  if (code === 'cl') {
+    return ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en Santiago.'
+  }
+  if (code === 've') {
+    return ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en Caracas solamente.'
+  }
+  if (code === 'mx') {
+    return ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en México.'
+  }
+  return ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo.'
+}
+
 export default function Hero({ country = countries.co }: HeroProps) {
   const [showWhatsAppModal, setShowWhatsAppModal] = useState(false)
 
@@ -28,11 +66,7 @@ export default function Hero({ country = countries.co }: HeroProps) {
         <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
           <Image
             src={heroImageSrc(country.code)}
-            alt={
-              country.code === 've'
-                ? 'Prueba de paternidad prenatal en Venezuela - Test paternidad prenatal Caracas'
-                : 'Prueba de paternidad prenatal no invasiva - Test de paternidad desde semana 7 de embarazo con resultados certificados'
-            }
+            alt={heroAlt(country.code)}
             fill
             className="object-contain object-right"
             priority
@@ -60,13 +94,7 @@ export default function Hero({ country = countries.co }: HeroProps) {
               >
                 Prueba de Paternidad{' '}
                 <span className="text-blue-600">Prenatal</span>{' '}
-                {country.code === 'co'
-                  ? 'en Cali'
-                  : country.code === 'ar'
-                  ? 'en Argentina'
-                  : country.code === 'cl'
-                  ? 'en Chile'
-                  : 'en Venezuela'}
+                {heroLocationLabel(country.code)}
               </motion.h1>
               
               <motion.p 
@@ -76,14 +104,7 @@ export default function Hero({ country = countries.co }: HeroProps) {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 Precisa, segura y sin riesgos para la {country.terms.mom} ni el {country.terms.baby}.
-                {country.code === 'co' 
-                  ? ' Resultados certificados internacionalmente rápidos, seguros y accesibles a partir de la semana 7 de embarazo.'
-                  : country.code === 'ar'
-                  ? ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en Buenos Aires y Belgrano.'
-                  : country.code === 'cl'
-                  ? ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en Santiago.'
-                  : ' Resultados confiables, rápidos y accesibles desde la semana 7 de embarazo. Atención en Caracas solamente.'
-                }
+                {heroDescriptionByCountry(country.code)}
               </motion.p>
             </div>
 
