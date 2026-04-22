@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    NEXT_PUBLIC_WHATSAPP_MX:
-      process.env.NEXT_PUBLIC_WHATSAPP_MX || '525526543920',
-  },
   experimental: {
     appDir: true,
   },

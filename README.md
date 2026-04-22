@@ -58,6 +58,19 @@ npm run dev
 └── tsconfig.json            # Configuración de TypeScript
 ```
 
+## 🔐 Variables de entorno (WhatsApp CL/MX)
+
+Para evitar exponer números de WhatsApp en el código cliente de Chile y México, define estas variables privadas en tu entorno:
+
+```bash
+WHATSAPP_CL=598XXXXXXXX
+WHATSAPP_MX=52XXXXXXXXXX
+```
+
+- Se usan desde el endpoint `app/api/whatsapp/route.ts`.
+- No deben llevar prefijo `NEXT_PUBLIC_`.
+- Si faltan, el botón de WhatsApp en `/cl` o `/mx` mostrará un mensaje de configuración pendiente.
+
 ## 🎨 Personalización
 
 ### Colores
@@ -135,7 +148,6 @@ Las contribuciones son bienvenidas. Por favor, abre un issue o pull request.
 
 Para soporte técnico, contacta a:
 - Email: paternidadprenatalmx@ejemplo.com
-- WhatsApp: +52 55 1234 5678
 
 # adn-prenatal
 # adn_prenat

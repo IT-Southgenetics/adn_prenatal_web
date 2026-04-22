@@ -33,12 +33,27 @@ export default function WhatsAppModal({ isOpen, onClose, country = countries.co 
     }
   }, [isOpen])
 
-  const handleConsultar = () => {
-    if (!country.whatsappNumber) {
-      alert('El contacto de WhatsApp para este pais esta por definir.')
-      return
+  const getServerWhatsAppUrl = async (message: string) => {
+    const response = await fetch('/api/whatsapp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        countryCode: country.code,
+        message
+      })
+    })
+
+    if (!response.ok) {
+      return null
     }
 
+    const data = await response.json() as { url?: string }
+    return data.url ?? null
+  }
+
+  const handleConsultar = () => {
     // Reportar conversión a Google Ads
     if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
       (window as any).gtag_report_conversion()
@@ -46,9 +61,32 @@ export default function WhatsAppModal({ isOpen, onClose, country = countries.co 
 
     // Abrir WhatsApp con mensaje predefinido
     const mensaje = 'Hola, quiero recibir más información sobre el test de paternidad prenatal.'
-    const whatsappUrl = `https://wa.me/${country.whatsappNumber}?text=${encodeURIComponent(mensaje)}`
-    window.open(whatsappUrl, '_blank')
-    onClose()
+    const openWhatsApp = async () => {
+      // CL y MX resuelven el número en backend para evitar exponerlo en cliente.
+      if (country.code === 'cl' || country.code === 'mx') {
+        const serverUrl = await getServerWhatsAppUrl(mensaje)
+
+        if (!serverUrl) {
+          alert('El contacto de WhatsApp para este pais esta por definir.')
+          return
+        }
+
+        window.open(serverUrl, '_blank')
+        onClose()
+        return
+      }
+
+      if (!country.whatsappNumber) {
+        alert('El contacto de WhatsApp para este pais esta por definir.')
+        return
+      }
+
+      const whatsappUrl = `https://wa.me/${country.whatsappNumber}?text=${encodeURIComponent(mensaje)}`
+      window.open(whatsappUrl, '_blank')
+      onClose()
+    }
+
+    void openWhatsApp()
   }
 
   return (
