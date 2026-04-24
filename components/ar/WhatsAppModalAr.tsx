@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, MessageCircle, Phone } from 'lucide-react'
+import { X, MessageCircle } from 'lucide-react'
 import { countries } from '@/config/countries.config'
 
 interface WhatsAppModalProps {
@@ -65,10 +65,7 @@ export default function WhatsAppModalAr({ isOpen, onClose }: WhatsAppModalProps)
                 <p className="text-gray-600">
                   Nuestro equipo en Argentina está listo para ayudarte con todas tus consultas sobre la prueba de paternidad prenatal.
                 </p>
-                <div className="flex items-center justify-center gap-2 text-gray-500">
-                  <Phone className="w-4 h-4" />
-                  <span className="text-sm">{country.phone}</span>
-                </div>
+                <p className="text-sm text-gray-500">Te responderemos directamente por WhatsApp.</p>
               </div>
 
               <div className="space-y-3">

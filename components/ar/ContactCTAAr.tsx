@@ -37,8 +37,8 @@ export default function ContactCTAAr() {
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <p className="text-ocean-200 text-sm">Teléfono / WhatsApp</p>
-                  <p className="text-lg font-semibold">{country.phone}</p>
+                  <p className="text-ocean-200 text-sm">Contacto por WhatsApp</p>
+                  <p className="text-lg font-semibold">Atención inmediata</p>
                 </div>
               </div>
 
