@@ -13,7 +13,7 @@ export default function WhatsAppModalVe({ isOpen, onClose }: WhatsAppModalProps)
   const country = countries.ve
   
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent('Hola, estoy interesado/a en la prueba de paternidad prenatal. Me gustaría recibir más información.')
+    const message = encodeURIComponent('Hola, quiero más información sobre el test de paternidad prenatal')
     window.open(`https://wa.me/${country.whatsappNumber}?text=${message}`, '_blank')
     onClose()
   }

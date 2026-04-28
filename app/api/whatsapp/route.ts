@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: `WhatsApp number not configured for ${countryCode}` }, { status: 404 })
     }
 
-    const message = body.message ?? 'Hola, quiero recibir más información sobre el test de paternidad prenatal.'
+    const message = body.message ?? 'Hola, quiero más información sobre el test de paternidad prenatal'
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
 
     return NextResponse.json({ url })

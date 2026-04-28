@@ -127,7 +127,7 @@ export const countries: Record<string, CountryConfig> = {
     currency: 'USD',
     currencySymbol: 'US$',
     phone: '+598 92 758 749',
-    whatsappNumber: '',
+    whatsappNumber: '59892758749',
     email: 'info@pacificgenomics.cl',
     cities: ['Santiago', 'Valparaíso', 'Concepción', 'La Serena', 'Antofagasta'],
     mainCity: 'Santiago',

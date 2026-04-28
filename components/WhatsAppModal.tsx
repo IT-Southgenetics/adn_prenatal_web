@@ -60,20 +60,17 @@ export default function WhatsAppModal({ isOpen, onClose, country = countries.co 
     }
 
     // Abrir WhatsApp con mensaje predefinido
-    const mensaje = 'Hola, quiero recibir más información sobre el test de paternidad prenatal.'
+    const mensaje = 'Hola, quiero más información sobre el test de paternidad prenatal'
     const openWhatsApp = async () => {
-      // CL y MX resuelven el número en backend para evitar exponerlo en cliente.
+      // CL y MX intentan resolver el número en backend para evitar exponerlo en cliente.
       if (country.code === 'cl' || country.code === 'mx') {
         const serverUrl = await getServerWhatsAppUrl(mensaje)
 
-        if (!serverUrl) {
-          alert('El contacto de WhatsApp para este pais esta por definir.')
+        if (serverUrl) {
+          window.open(serverUrl, '_blank')
+          onClose()
           return
         }
-
-        window.open(serverUrl, '_blank')
-        onClose()
-        return
       }
 
       if (!country.whatsappNumber) {
