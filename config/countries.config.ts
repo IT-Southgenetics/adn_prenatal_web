@@ -167,7 +167,7 @@ export const countries: Record<string, CountryConfig> = {
     currency: 'USD',
     currencySymbol: 'US$',
     phone: '55 5202 9687',
-    whatsappNumber: '',
+    whatsappNumber: '5215526543920',
     email: 'cobranzasnecbbmexico@southgenetics.com',
     cities: ['Ciudad de México', 'Guadalajara', 'Monterrey', 'Puebla', 'Querétaro'],
     mainCity: 'CDMX',
