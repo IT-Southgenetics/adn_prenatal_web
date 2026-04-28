@@ -208,8 +208,8 @@ export const countries: Record<string, CountryConfig> = {
     fullName: 'Venezuela',
     currency: 'USD',
     currencySymbol: '$',
-    phone: '+58 412 345 6789', // TODO: Actualizar con número real
-    whatsappNumber: '584123456789', // TODO: Actualizar con número real
+    phone: '+58 424-1520809',
+    whatsappNumber: '584241520809',
     email: 'venezuela@southgenetics.com',
     cities: ['Caracas', 'Maracaibo', 'Valencia', 'Barquisimeto', 'Maracay'],
     mainCity: 'Caracas',
